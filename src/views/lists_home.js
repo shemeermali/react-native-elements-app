@@ -1,6 +1,13 @@
 import Expo from 'expo';
 import React, { Component } from 'react';
-import { View, ScrollView, StyleSheet, Image, TouchableHighlight, ListView } from 'react-native';
+import {
+  View,
+  ScrollView,
+  StyleSheet,
+  Image,
+  TouchableHighlight,
+  ListView,
+} from 'react-native';
 
 import {
   Text,
@@ -34,7 +41,8 @@ const users = [
   },
   {
     name: 'talhaconcepts',
-    avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/talhaconcepts/128.jpg',
+    avatar:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/talhaconcepts/128.jpg',
   },
   {
     name: 'andy vitale',
@@ -74,12 +82,14 @@ const list1 = [
 const list2 = [
   {
     name: 'Amy Farha',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+    avatar_url:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
     subtitle: 'Vice President',
   },
   {
     name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+    avatar_url:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     subtitle: 'Vice Chairman',
   },
   {
@@ -89,12 +99,14 @@ const list2 = [
   },
   {
     name: 'Christy Thomas',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/kfriedson/128.jpg',
+    avatar_url:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/kfriedson/128.jpg',
     subtitle: 'Lead Developer',
   },
   {
     name: 'Melissa Jones',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/nuraika/128.jpg',
+    avatar_url:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/nuraika/128.jpg',
     subtitle: 'CTO',
   },
 ];
@@ -128,6 +140,7 @@ class Icons extends Component {
         title={rowData.title}
         leftIcon={{ name: rowData.icon }}
         disclosure
+        bottomDivider
       />
     );
   }
@@ -153,6 +166,7 @@ class Icons extends Component {
               title={l.name}
               subtitle={l.subtitle}
               disclosure
+              bottomDivider
             />
           ))}
         </List>
@@ -160,44 +174,80 @@ class Icons extends Component {
           {list2.map((l, i) => (
             <ListItem
               key={i}
-              leftIcon={{ name: 'user-circle-o', type: 'font-awesome', color: 'blue' }}
+              leftIcon={{
+                size: 40,
+                name: 'user-circle-o',
+                type: 'font-awesome',
+                color: 'blue',
+              }}
               title={l.name}
               titleProps={{ children: l.name, style: { color: 'red' } }}
               subtitle={l.subtitle}
               rightTitle="11:00am"
               rightTitleProps={{ style: { color: 'green' } }}
+              bottomDivider
             />
           ))}
         </List>
         <List>
-          <ListItem title="Name" textInputProps={{ placeholder: 'Type your name' }} disclosure />
-          <ListItem title="Switch that please 😲" switchProps={{}} />
+          <ListItem
+            title="Name"
+            inputProps={{ placeholder: 'Type your name' }}
+            disclosure
+            bottomDivider
+          />
+          <ListItem
+            title="Switch that please 😲"
+            switchProps={{}}
+            bottomDivider
+          />
           <ListItem
             title="Choose 🤯"
             buttonGroupProps={{
               buttons: ['Flower', 'Coco'],
             }}
+            bottomDivider
           />
-          <ListItem title="Check that please 😢" checkBoxProps={{ value: true }} />
-          <ListItem title="With a Badge ! 😻" badgeProps={{ value: '12' }} />
-          <ListItem title="This thing is checked 😎" checkmark />
+          <ListItem
+            title="Check that please 😢"
+            checkBoxProps={{ value: true }}
+            bottomDivider
+          />
+          <ListItem
+            title="With a Badge ! 😻"
+            badgeProps={{ value: '12' }}
+            bottomDivider
+          />
+          <ListItem title="This thing is checked 😎" checkmark bottomDivider />
         </List>
         <List>
           <ListItem
             title="Limited supply! Its like digital gold!"
             subtitle={
               <View style={styles.subtitleView}>
-                <Image source={require('../images/rating.png')} style={styles.ratingImage} />
+                <Image
+                  source={require('../images/rating.png')}
+                  style={styles.ratingImage}
+                />
                 <Text style={styles.ratingText}>5 months ago</Text>
               </View>
             }
             leftAvatar={{ source: require('../images/avatar1.jpg') }}
+            bottomDivider
           />
         </List>
         <List>
-          <ListView renderRow={this.renderRow} dataSource={this.state.dataSource} />
+          <ListView
+            renderRow={this.renderRow}
+            dataSource={this.state.dataSource}
+          />
         </List>
-        <View style={[styles.headerContainer, { backgroundColor: '#18CDCA', marginTop: 20 }]}>
+        <View
+          style={[
+            styles.headerContainer,
+            { backgroundColor: '#18CDCA', marginTop: 20 },
+          ]}
+        >
           <Icon color="white" name="hdd-o" size={62} type="font-awesome" />
           <Text style={styles.heading}>Cards</Text>
         </View>
@@ -206,7 +256,11 @@ class Icons extends Component {
             {users.map((u, i) => {
               return (
                 <View key={i} style={styles.user}>
-                  <Image style={styles.image} resizeMode="cover" source={{ uri: u.avatar }} />
+                  <Image
+                    style={styles.image}
+                    resizeMode="cover"
+                    source={{ uri: u.avatar }}
+                  />
                   <Text style={styles.name}>{u.name}</Text>
                 </View>
               );
@@ -227,7 +281,10 @@ class Icons extends Component {
             </Text>
             <Text style={styles.fonts}>Normal Text</Text>
           </Card>
-          <Card containerStyle={{ marginTop: 15, marginBottom: 15 }} title="TILES">
+          <Card
+            containerStyle={{ marginTop: 15, marginBottom: 15 }}
+            title="TILES"
+          >
             <View>
               <Tile
                 imageSrc={{
@@ -245,7 +302,8 @@ class Icons extends Component {
             <View style={{ paddingTop: 20 }}>
               <Tile
                 imageSrc={{
-                  uri: 'https://awildgeographer.files.wordpress.com/2015/02/john_muir_glacier.jpg',
+                  uri:
+                    'https://awildgeographer.files.wordpress.com/2015/02/john_muir_glacier.jpg',
                 }}
                 icon={{
                   name: 'heart',
@@ -271,13 +329,15 @@ class Icons extends Component {
                 titleStyle={{ fontSize: 20 }}
                 activeOpacity={1}
                 width={310}
-                contentContainerStyle={{ height: 70 }}>
+                contentContainerStyle={{ height: 70 }}
+              >
                 <View
                   style={{
                     flex: 1,
                     flexDirection: 'row',
                     justifyContent: 'space-between',
-                  }}>
+                  }}
+                >
                   <Text style={{ color: 'green' }}>Visit</Text>
                   <Text style={{ color: 'blue' }}>Find out More</Text>
                 </View>
