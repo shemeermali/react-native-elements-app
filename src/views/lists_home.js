@@ -126,7 +126,7 @@ class Icons extends Component {
         key={sectionID}
         onPress={log}
         title={rowData.title}
-        icon={{ name: rowData.icon }}
+        leftIcon={{ name: rowData.icon }}
         disclosure
       />
     );
@@ -147,7 +147,7 @@ class Icons extends Component {
           {list2.map((l, i) => (
             <ListItem
               roundAvatar
-              avatar={{ source: { uri: l.avatar_url } }}
+              leftAvatar={{ source: { uri: l.avatar_url } }}
               key={i}
               onPress={log}
               title={l.name}
@@ -160,9 +160,9 @@ class Icons extends Component {
           {list2.map((l, i) => (
             <ListItem
               key={i}
-              icon={{ name: 'user-circle-o', type: 'font-awesome', color: 'blue' }}
+              leftIcon={{ name: 'user-circle-o', type: 'font-awesome', color: 'blue' }}
               title={l.name}
-              titleProps={{ style: { color: 'red' } }}
+              titleProps={{ children: l.name, style: { color: 'red' } }}
               subtitle={l.subtitle}
               rightTitle="11:00am"
               rightTitleProps={{ style: { color: 'green' } }}
@@ -170,11 +170,14 @@ class Icons extends Component {
           ))}
         </List>
         <List>
-          <ListItem title="Name" textInputProps={{ placeholder: 'Type your name' }} />
+          <ListItem title="Name" textInputProps={{ placeholder: 'Type your name' }} disclosure />
           <ListItem title="Switch that please 😲" switchProps={{}} />
-          <ListItem title="Choose 🤯" buttonGroupProps={{
-            buttons: ['Flower', 'Coco'],
-          }} />
+          <ListItem
+            title="Choose 🤯"
+            buttonGroupProps={{
+              buttons: ['Flower', 'Coco'],
+            }}
+          />
           <ListItem title="Check that please 😢" checkBoxProps={{ value: true }} />
           <ListItem title="With a Badge ! 😻" badgeProps={{ value: '12' }} />
           <ListItem title="This thing is checked 😎" checkmark />
@@ -188,13 +191,13 @@ class Icons extends Component {
                 <Text style={styles.ratingText}>5 months ago</Text>
               </View>
             }
-            avatar={{ source: require('../images/avatar1.jpg') }}
+            leftAvatar={{ source: require('../images/avatar1.jpg') }}
           />
         </List>
         <List>
           <ListView renderRow={this.renderRow} dataSource={this.state.dataSource} />
         </List>
-        <View style={[styles.headerContainer, {backgroundColor: '#18CDCA', marginTop: 20}]}>
+        <View style={[styles.headerContainer, { backgroundColor: '#18CDCA', marginTop: 20 }]}>
           <Icon color="white" name="hdd-o" size={62} type="font-awesome" />
           <Text style={styles.heading}>Cards</Text>
         </View>
@@ -304,7 +307,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 40,
-    backgroundColor: '#FD6B78'
+    backgroundColor: '#FD6B78',
   },
   heading: {
     color: 'white',
