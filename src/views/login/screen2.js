@@ -49,7 +49,9 @@ export default class LoginScreen3 extends Component {
     this.setSelectedType = this.setSelectedType.bind(this);
     this.validateEmail = this.validateEmail.bind(this);
     this.validatePassword = this.validatePassword.bind(this);
-    this.validateConfirmationPassword = this.validateConfirmationPassword.bind(this);
+    this.validateConfirmationPassword = this.validateConfirmationPassword.bind(
+      this
+    );
     this.signup = this.signup.bind(this);
   }
 
@@ -69,7 +71,12 @@ export default class LoginScreen3 extends Component {
     const emailValid = this.validateEmail();
     const passwordValid = this.validatePassword();
     const confirmationPasswordValid = this.validateConfirmationPassword();
-    if (emailValid && passwordValid && confirmationPasswordValid && usernameValid) {
+    if (
+      emailValid &&
+      passwordValid &&
+      confirmationPasswordValid &&
+      usernameValid
+    ) {
       this.setState({ isLoading: true });
       setTimeout(() => {
         LayoutAnimation.easeInEaseOut();
@@ -140,8 +147,12 @@ export default class LoginScreen3 extends Component {
       <ScrollView
         scrollEnabled={false}
         keyboardShouldPersistTaps="handled"
-        contentContainerStyle={styles.container}>
-        <KeyboardAvoidingView behavior="position" contentContainerStyle={styles.formContainer}>
+        contentContainerStyle={styles.container}
+      >
+        <KeyboardAvoidingView
+          behavior="position"
+          contentContainerStyle={styles.formContainer}
+        >
           <Text style={styles.signUpText}>Sign up</Text>
           <Text style={styles.whoAreYouText}>WHO YOU ARE ?</Text>
           <View style={styles.userTypesContainer}>
@@ -216,7 +227,9 @@ export default class LoginScreen3 extends Component {
               refInput={input => (this.confirmationPasswordInput = input)}
               icon="lock"
               value={confirmationPassword}
-              onChangeText={confirmationPassword => this.setState({ confirmationPassword })}
+              onChangeText={confirmationPassword =>
+                this.setState({ confirmationPassword })
+              }
               placeholder="Confirm Password"
               secureTextEntry
               displayError={!confirmationPasswordValid}
@@ -245,7 +258,9 @@ export default class LoginScreen3 extends Component {
           />
         </KeyboardAvoidingView>
         <View style={styles.loginHereContainer}>
-          <Text style={styles.alreadyAccountText}>Already have an account.</Text>
+          <Text style={styles.alreadyAccountText}>
+            Already have an account.
+          </Text>
           <Button
             title="Login here"
             titleStyle={styles.loginHereText}
@@ -265,11 +280,20 @@ export const UserTypeItem = props => {
   return (
     <TouchableOpacity {...attributes}>
       <View
-        style={[styles.userTypeItemContainer, selected && styles.userTypeItemContainerSelected]}>
-        <Text style={[styles.userTypeLabel, { color: labelColor }]}>{label}</Text>
+        style={[
+          styles.userTypeItemContainer,
+          selected && styles.userTypeItemContainerSelected,
+        ]}
+      >
+        <Text style={[styles.userTypeLabel, { color: labelColor }]}>
+          {label}
+        </Text>
         <Image
           source={image}
-          style={[styles.userTypeMugshot, selected && styles.userTypeMugshotSelected]}
+          style={[
+            styles.userTypeMugshot,
+            selected && styles.userTypeMugshotSelected,
+          ]}
         />
       </View>
     </TouchableOpacity>
