@@ -25,13 +25,13 @@ class Buttons extends Component {
           </View>
           <Button containerStyle={{marginVertical: 10}} />
           <Button
-            title='LOG IN'
+            text='LOG IN'
             buttonStyle={{height: 50, width: 250, backgroundColor: 'black', borderWidth: 2, borderColor: 'white', borderRadius: 30}}
             containerStyle={{marginVertical: 10}}
             titleStyle={{fontWeight: 'bold'}}
           />
           <Button
-            title='Log in'
+            text='Log in'
             loading={false}
             loadingProps={{size: 'small', color: 'white'}}
             buttonStyle={{height: 50, width: 230, backgroundColor: 'rgba(111, 202, 186, 1)', borderRadius: 5}}
@@ -41,7 +41,7 @@ class Buttons extends Component {
             underlayColor="transparent"
           />
           <Button
-            title="Add to Cart"
+            text="Add to Cart"
             titleStyle={{fontWeight: 'bold', fontSize: 18}}
             linearGradientProps={{
               colors: ['#FF9800', '#F44336'],
@@ -61,20 +61,20 @@ class Buttons extends Component {
             iconContainerStyle={{marginLeft: 5}}
           />
           <Button
-            title="Request an agent"
+            text="Request an agent"
             titleStyle={{fontWeight: '500'}}
             buttonStyle={{backgroundColor: 'rgba(199, 43, 98, 1)', width: 275, height: 45, borderColor: 'transparent', borderWidth: 0}}
             containerStyle={{marginTop: 10}}
           />
           <Button
-            title="SIGN UP"
+            text="SIGN UP"
             disabled={true}
             titleStyle={{fontWeight: '700'}}
             buttonStyle={{backgroundColor: 'rgba(92, 99,216, 1)', width: 300, height: 45, borderColor: 'transparent', borderWidth: 0, borderRadius: 5}}
             containerStyle={{marginTop: 20}}
           />
           <Button
-            title="SIGN UP"
+            text="SIGN UP"
             loading={true}
             loadingProps={{size: 'large', color: 'rgba(111, 202, 186, 1)'}}
             titleStyle={{fontWeight: '700'}}
@@ -83,7 +83,7 @@ class Buttons extends Component {
           />
           <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
             <Button
-              title="HOME"
+              text="HOME"
               icon={
                 <Icon
                   name='home'
@@ -97,7 +97,7 @@ class Buttons extends Component {
               containerStyle={{marginTop: 20}}
             />
             <Button
-              title="PROFILE"
+              text="PROFILE"
               icon={
                 <Icon
                   name='user'
@@ -114,12 +114,12 @@ class Buttons extends Component {
           </View>
           <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
             <Button
-              title="Basic Button"
+              text="Basic Button"
               buttonStyle={{backgroundColor: 'rgba(78, 116, 289, 1)', borderRadius: 3}}
               containerStyle={{marginTop: 20}}
             />
             <Button
-              title="Outline Button"
+              text="Outline Button"
               buttonStyle={{backgroundColor: 'white', borderColor: 'rgba(78, 116, 289, 1)', borderWidth: 1}}
               containerStyle={{marginTop: 20}}
               titleStyle={{color: 'rgba(78, 116, 289, 1)'}}
@@ -127,14 +127,14 @@ class Buttons extends Component {
           </View>
           <View style={{justifyContent: 'space-around', alignItems: 'center', flexDirection: 'row'}}>
             <Button
-              title="HOME"
+              text="HOME"
               loading={true}
               titleStyle={{fontWeight: '700'}}
               buttonStyle={{backgroundColor: 'rgba(111, 202, 186, 1)', width: 100, height: 30, borderColor: 'transparent', borderWidth: 0, borderRadius: 30}}
               containerStyle={{marginTop: 20}}
             />
             <Button
-              title="Clear Button"
+              text="Clear Button"
               clear
               titleStyle={{color: 'rgba(78, 116, 289, 1)'}}
               containerStyle={{marginTop: 20}}
@@ -142,19 +142,19 @@ class Buttons extends Component {
           </View>
           <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
             <Button
-              title="Light"
+              text="Light"
               buttonStyle={{backgroundColor: 'rgba(244, 244, 244, 1)', width: null, height: 40, borderRadius: 3}}
               containerStyle={{marginTop: 20}}
               titleStyle={{marginHorizontal: 20, color: 'black'}}
             />
             <Button
-              title="Dark"
+              text="Dark"
               buttonStyle={{backgroundColor: 'rgba(39, 39, 39, 1)', width: null, height: 40}}
               containerStyle={{marginTop: 20}}
               titleStyle={{color: 'white', marginHorizontal: 20}}
             />
             <Button
-              title="Default"
+              text="Default"
               containerStyle={{marginTop: 20}}
               buttonStyle={{backgroundColor: 'rgba(78, 116, 289, 1)', width: null, height: 40}}
               titleStyle={{color: 'white', marginHorizontal: 20}}
@@ -162,13 +162,13 @@ class Buttons extends Component {
           </View>
           <View style={{flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', marginBottom: 20}}>
             <Button
-              title="Secondary"
+              text="Secondary"
               buttonStyle={{backgroundColor: 'rgba(127, 220, 103, 1)', width: null, height: 40}}
               containerStyle={{marginTop: 20}}
               titleStyle={{color: 'white', marginHorizontal: 20}}
             />
             <Button
-              title="Danger"
+              text="Danger"
               buttonStyle={{backgroundColor: 'rgba(214, 61, 57, 1)', width: null, height: 40}}
               containerStyle={{marginTop: 20}}
               titleStyle={{color: 'white', marginHorizontal: 20}}
